@@ -1,7 +1,7 @@
-import express from 'express'
-import { createRoutesMap } from './routesMap'
+const express = require('express')
+const { createRoutesMap } = require('./routesMap')
 
-export async function loadRoutes(router, root, routesMap) {
+async function loadRoutes(router, root, routesMap) {
     routesMap.forEach(async (routePath, routeName) => {
         try {
             let mod = await import(routePath)
@@ -16,16 +16,17 @@ export async function loadRoutes(router, root, routesMap) {
     })
 }
 
-export default async function fancyLoader(root, directory) {
-    let mainRouter = express.Router()
+module.exports = {
+    fancyLoader: async (root, directory) => {
+        let mainRouter = express.Router()
 
-    let routesMap, siteRouter
-    try {
-        routesMap = await createRoutesMap(directory)
-        await loadRoutes(mainRouter, root, routesMap)
-    } catch (err) {
-        throw err
+        let routesMap, siteRouter
+        try {
+            routesMap = await createRoutesMap(directory)
+            await loadRoutes(mainRouter, root, routesMap)
+        } catch (err) {
+            throw err
+        }
+        return mainRouter
     }
-
-    return mainRouter
 }

@@ -12,7 +12,8 @@ This is a middleware for asynchronously, quick and simply load routes to your Ex
             about.js   - it loead each file, e.g. on route /about, load about.js module 
         index.js
 
-// Index.js
+    # Index.js
+
     import express from 'express'
 
     async function main() {
@@ -27,7 +28,7 @@ This is a middleware for asynchronously, quick and simply load routes to your Ex
         console.log(`App error: ${err}`);
     })
 
-    # Alternatively with Promise
+    // Alternatively with Promise
     fancyLoader("api", __dirname + "/routes").then(middleware => {
         app.use("/", middleware)
         app.listen(3000, () => console.log(`Started`))
