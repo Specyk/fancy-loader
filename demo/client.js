@@ -14,7 +14,7 @@ main().then(() => {
     console.log(`App error: ${err}`);
 })
 
-// Alternatively
+// Alternatively with Promise
 // fancyLoader("api", __dirname + "/routes").then(middleware => {
 //     app.use("/", middleware)
 //     app.listen(3000, () => console.log(`Started`))
