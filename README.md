@@ -15,6 +15,7 @@ This is a middleware for asynchronously, quick and simply load routes to your Ex
     # Index.js
 
     import express from 'express'
+    import fancyLoader from 'fancy-loader'
 
     async function main() {
         const app = express()

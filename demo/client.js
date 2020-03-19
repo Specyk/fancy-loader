@@ -1,4 +1,4 @@
-import { fancyLoader } from '../index'
+import fancyLoader from '../index'
 import express from 'express'
 
 

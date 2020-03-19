@@ -1,6 +1,6 @@
 {
   "name": "fancy-loader",
-  "version": "0.8.0",
+  "version": "0.8.2",
   "description": "express routes loading middleware for convinient load routes from a specified directory",
   "main": "index.js",
   "scripts": {

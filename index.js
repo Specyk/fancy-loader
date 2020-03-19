@@ -16,17 +16,15 @@ async function loadRoutes(router, root, routesMap) {
     })
 }
 
-module.exports = {
-    fancyLoader: async (root, directory) => {
-        let mainRouter = express.Router()
+module.exports = async (root, directory) => {
+    let mainRouter = express.Router()
 
-        let routesMap, siteRouter
-        try {
-            routesMap = await createRoutesMap(directory)
-            await loadRoutes(mainRouter, root, routesMap)
-        } catch (err) {
-            throw err
-        }
-        return mainRouter
+    let routesMap, siteRouter
+    try {
+        routesMap = await createRoutesMap(directory)
+        await loadRoutes(mainRouter, root, routesMap)
+    } catch (err) {
+        throw err
     }
+    return mainRouter
 }
