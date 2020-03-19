@@ -1,0 +1,29 @@
+{
+  "name": "fancy-loader",
+  "version": "0.8.0",
+  "description": "express routes loading middleware for convinient load routes from a specified directory",
+  "main": "index.js",
+  "scripts": {
+    "demo": "node -r esm demo/client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Specyk/fancy-loader.git"
+  },
+  "keywords": [
+    "express",
+    "routes",
+    "middleware"
+  ],
+  "author": "Emil Mordarski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Specyk/fancy-loader/issues"
+  },
+  "homepage": "https://github.com/Specyk/fancy-loader#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "globby": "^11.0.0"
+  }
+}
