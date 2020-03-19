@@ -27,8 +27,8 @@ This is a middleware for asynchronously, quick and simply load routes to your Ex
         console.log(`App error: ${err}`);
     })
 
-    // Alternatively with Promise
-    // fancyLoader("api", __dirname + "/routes").then(middleware => {
-    //     app.use("/", middleware)
-    //     app.listen(3000, () => console.log(`Started`))
-    // })
+    # Alternatively with Promise
+    fancyLoader("api", __dirname + "/routes").then(middleware => {
+        app.use("/", middleware)
+        app.listen(3000, () => console.log(`Started`))
+    })
